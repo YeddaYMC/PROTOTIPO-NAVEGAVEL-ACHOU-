@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ACHOU! - Protótipo Navegável</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div id="app">
+        <!-- Tela 1 - Splash / Welcome -->
+        <section class="screen" id="screen-1">
+            <div class="center">
+                <img src="" alt="Logo ACHOU!" class="logo" />
+                <h1>ACHOU!</h1>
+                <p>Encontre negócios perto de você.</p>
+                <button class="primary" data-action="create-account">Criar Minha Conta</button>
+                <button class="secondary" data-action="goto-login">Já Tenho Conta (Login)</button>
+            </div>
+        </section>
+
+        <!-- Tela 2 - Escolha do Papel -->
+        <section class="screen" id="screen-2">
+            <div class="center">
+                <h2>Qual o seu objetivo com o ACHOU!?</h2>
+                <div class="role-buttons">
+                    <button class="role" data-role="consumer">Sou Consumidor<br><small>Quero Buscar
+                            Negócios</small></button>
+                    <button class="role" data-role="business">Sou Empreendedor<br><small>Quero Anunciar</small></button>
+                </div>
+                <button class="link" data-action="back">Voltar</button>
+            </div>
+        </section>
+
+        <!-- Tela 3 - Cadastro Finalização -->
+        <section class="screen" id="screen-3">
+            <div class="center form">
+                <h2>Criar Conta</h2>
+                <form id="signup-form">
+                    <label>Nome
+                        <input name="name" required />
+                    </label>
+                    <label>CPF / CNPJ
+                        <input name="document" required />
+                    </label>
+                    <label>Endereço
+                        <input name="address" />
+                    </label>
+                    <label>Data de Nascimento
+                        <input name="dob" type="date" />
+                    </label>
+                    <label>E-mail
+                        <input name="email" type="email" required />
+                    </label>
+                    <label>Senha
+                        <input name="password" type="password" required />
+                    </label>
+                    <label>WhatsApp
+                        <input name="whatsapp" />
+                    </label>
+                    <label class="checkbox"><input type="checkbox" name="agree" required /> Declaro que li e concordo
+                        com a política de privacidade (LGPD)</label>
+                    <div class="actions">
+                        <button type="submit" class="primary">Criar Conta</button>
+                        <button type="button" class="link" data-action="back">Voltar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Tela 4 - Login -->
+        <section class="screen" id="screen-4">
+            <div class="center form">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <label>E-mail
+                        <input name="email" type="email" required />
+                    </label>
+                    <label>Senha
+                        <input name="password" type="password" required />
+                    </label>
+                    <div class="actions">
+                        <button type="submit" class="primary">Entrar</button>
+                        <button type="button" class="secondary" data-action="google-login">Entrar com Google</button>
+                    </div>
+                    <button type="button" class="link" data-action="back">Voltar</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Tela 5 - Home Consumidor (Busca) -->
+        <section class="screen" id="screen-5">
+            <header class="top">
+                <input class="search" placeholder="Buscar negócios ou serviços" />
+            </header>
+            <div class="filters">
+                <button class="chip">Promoções</button>
+                <button class="chip">Alimentação</button>
+                <button class="chip">Serviços</button>
+            </div>
+            <div class="map">Mapa (simulado)</div>
+            <div class="list" id="results">
+                <!-- Cards gerados dinamicamente -->
+            </div>
+            <nav class="bottom-nav">
+                <button data-action="profile">Perfil</button>
+            </nav>
+        </section>
+
+        <!-- Tela 6 - Detalhes do Negócio -->
+        <section class="screen" id="screen-6">
+            <div class="center details">
+                <div class="biz-photo">Foto</div>
+                <h3 id="biz-name">Nome do Negócio</h3>
+                <p id="biz-desc">Descrição do negócio.</p>
+                <ul class="biz-info">
+                    <li id="biz-address">Endereço: --</li>
+                    <li id="biz-hours">Horário: --</li>
+                    <li id="biz-distance">Distância: --</li>
+                </ul>
+                <div class="actions">
+                    <button id="call-whatsapp" class="primary">Ligar / WhatsApp</button>
+                    <button id="route" class="secondary">Traçar Rota</button>
+                </div>
+                <button class="link" data-action="back">Voltar</button>
+            </div>
+        </section>
+
+        <!-- Tela 7 - Perfil Consumidor -->
+        <section class="screen" id="screen-7">
+            <div class="center form">
+                <h2>Meu Perfil</h2>
+                <div id="profile-info"></div>
+                <div class="actions">
+                    <button data-action="edit-profile" class="primary">Editar</button>
+                    <button data-action="logout" class="secondary">Sair</button>
+                </div>
+                <button class="link" data-action="back">Voltar</button>
+            </div>
+        </section>
+
+        <!-- Tela 8 - Empreendedor Home -->
+        <section class="screen" id="screen-8">
+            <div class="center">
+                <h2>Bem-vindo, Empreendedor</h2>
+                <div class="menu">
+                    <button data-action="create-business" class="primary">Criar Perfil do Negócio</button>
+                    <button data-action="manage-business" class="secondary">Gerenciar Perfil de Negócios</button>
+                    <button data-action="view-my-ad" class="link">Visualizar Meu Anúncio</button>
+                </div>
+                <button class="link" data-action="back">Voltar</button>
+            </div>
+        </section>
+
+        <!-- Tela 9 - Criar / Editar Perfil de Negócio -->
+        <section class="screen" id="screen-9">
+            <div class="center form">
+                <h2>Perfil do Negócio</h2>
+                <form id="business-form">
+                    <label>Nome Fantasia
+                        <input name="fantasyName" required />
+                    </label>
+                    <label>Descrição
+                        <textarea name="description"></textarea>
+                    </label>
+                    <label>Telefone
+                        <input name="phone" />
+                    </label>
+                    <label>Endereço (usar geolocalização)
+                        <input name="address" />
+                    </label>
+                    <label>Categoria
+                        <input name="category" />
+                    </label>
+                    <label>Horário
+                        <input name="hours" />
+                    </label>
+                    <label>CNPJ/CPF
+                        <input name="document" required />
+                    </label>
+                    <label>Foto (URL)
+                        <input name="photo" />
+                    </label>
+                    <div class="actions">
+                        <button type="submit" class="primary">Salvar e Publicar</button>
+                        <button type="button" class="link" data-action="back">Voltar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Tela 10 - Painel de Gestão -->
+        <section class="screen" id="screen-10">
+            <div class="center">
+                <h2>Painel de Gestão</h2>
+                <div class="menu">
+                    <button data-action="edit-account" class="primary">Atualizar Cadastro Pessoal</button>
+                    <button data-action="edit-business" class="secondary">Atualizar Perfil do Negócio</button>
+                    <button data-action="delete-business" class="danger">Excluir Perfil do Negócio</button>
+                    <button data-action="delete-account" class="danger">Deletar Conta</button>
+                </div>
+                <button class="link" data-action="back">Voltar</button>
+            </div>
+        </section>
+
+        <!-- Tela 11 - LGPD / Políticas -->
+        <section class="screen" id="screen-11">
+            <div class="center">
+                <h2>Política de Privacidade (LGPD)</h2>
+                <p>Aqui vai o texto resumido da política. (Protótipo)</p>
+                <button class="primary" data-action="agree-lgpd">Concordo</button>
+                <button class="link" data-action="back">Voltar</button>
+            </div>
+        </section>
+
+        <!-- Modais -->
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+                <p id="modal-text"></p>
+                <div class="modal-actions">
+                    <button id="modal-ok" class="primary">OK</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

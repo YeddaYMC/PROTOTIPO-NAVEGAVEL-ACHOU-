@@ -1,0 +1,228 @@
+/* Estilo simples mobile-first para o protótipo ACHOU! */
+:root {
+    --bg: #f7f8fb;
+    --primary: #0b6efd;
+    --secondary: #6c757d;
+    --danger: #dc3545;
+    --muted: #666;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Inter, Segoe UI, Roboto, Arial, sans-serif
+}
+
+html,
+body,
+#app {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: #111
+}
+
+.screen {
+    display: none;
+    padding: 20px;
+    min-height: 100vh
+}
+
+.screen.active {
+    display: block
+}
+
+.center {
+    max-width: 480px;
+    margin: 0 auto
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    background: #ddd;
+    border-radius: 16px;
+    display: block;
+    margin: 20px auto
+}
+
+h1,
+h2,
+h3 {
+    margin: 12px 0
+}
+
+.primary {
+    background: var(--primary);
+    color: #fff;
+    border: 0;
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer
+}
+
+.secondary {
+    background: #fff;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer
+}
+
+.link {
+    background: none;
+    border: 0;
+    color: var(--secondary);
+    padding: 8px;
+    margin-top: 8px;
+    cursor: pointer
+}
+
+.role-buttons {
+    display: flex;
+    gap: 10px
+}
+
+.role {
+    flex: 1;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px dashed #ccc;
+    background: #fff
+}
+
+.form label {
+    display: block;
+    margin: 8px 0
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ddd
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px
+}
+
+.top {
+    padding: 8px 0
+}
+
+.search {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+    padding: 8px 0
+}
+
+.chip {
+    background: #fff;
+    border-radius: 20px;
+    padding: 6px 10px;
+    border: 1px solid #eee
+}
+
+.map {
+    height: 150px;
+    background: linear-gradient(90deg, #e6eefc, #f6f9ff);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px 0
+}
+
+.list {
+    display: block
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.biz-photo {
+    width: 100%;
+    height: 160px;
+    background: #eee;
+    border-radius: 10px;
+    margin-bottom: 8px
+}
+
+.bottom-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+    background: #fff;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: center
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.modal.hidden {
+    display: none
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 360px
+}
+
+
+
+.danger {
+    background: var(--danger);
+    color: #fff;
+    border: 0;
+    padding: 10px;
+    border-radius: 8px
+}
+
+@media(min-width:600px) {
+    .center {
+        margin-top: 40px
+    }
+}
